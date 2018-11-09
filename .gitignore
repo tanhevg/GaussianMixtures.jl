@@ -20,3 +20,4 @@ test/speed.jl
 test/test.list
 *.ipynb
 .tags*
+
