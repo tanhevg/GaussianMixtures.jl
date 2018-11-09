@@ -73,7 +73,7 @@ end
 ## initialize GMM using Clustering.kmeans (which uses a method similar to kmeans++)
 function GMMk(n::Int, x::DataOrMatrix{T}; kind=:diag, nInit::Int=50, nIter::Int=10, sparse=0) where T
     nₓ, d = size(x)
-    hist = [History(@sprintf("Initializing GMM, %d Gaussians %s covariance %d dimensions using %d data points", n, diag, d, nₓ))]
+    hist = [History(@sprintf("Initializing GMM, %d Gaussians %s covariance %d dimensions using %d data points", n, kind, d, nₓ))]
     @info(last(hist).s)
     ## subsample x to max 1000 points per mean
     nneeded = 1000*n
